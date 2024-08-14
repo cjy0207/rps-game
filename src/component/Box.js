@@ -1,7 +1,7 @@
 import React from 'react'
 
 const Box = (props) => {
-  let result
+  let result;
   if(props.title==="Computer" && props.result !== "tie" && props.result!==""){
     result=props.result==="Win"? "Lose" : "Win"
   }else result=props.result

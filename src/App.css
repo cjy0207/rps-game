@@ -13,14 +13,17 @@
   justify-content: center;
 }
 
-.win{
-  border: 3px solid green;
+.Win{
+  border: 3px solid green; 
+  color:green;
 }
 
-.lose{
-  border: 3px solid red;
+.Lose{
+  border: 3px solid red; 
+  color:red;
 }
 
 .tie{
-  border: 3px solid black;
+  border: 3px solid black; 
+  color:black;
 }
