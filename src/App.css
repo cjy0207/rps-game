@@ -12,3 +12,15 @@
   display: flex;
   justify-content: center;
 }
+
+.win{
+  border: 3px solid green;
+}
+
+.lose{
+  border: 3px solid red;
+}
+
+.tie{
+  border: 3px solid black;
+}
