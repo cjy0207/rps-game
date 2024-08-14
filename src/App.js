@@ -21,15 +21,34 @@ const choice = {
 function App() {
 
   const [userSelect, setUserSelect] = useState(null)
+  const [computerSelect, setComputerSelect]=useState(null)
+  const [result, setResult] = useState("")
 
   const play=(userChoice)=>{
     setUserSelect(choice[userChoice])
+    let computerChoice = randomChoice()
+    setComputerSelect(computerChoice)
+    setResult(judgement(choice[userChoice], computerChoice))
+  }
+
+  const judgement = (user, computer)=>{
+    if(user.name===computer.name) return "tie"
+    else if(user.name==="Rock") return computer.name==="Scissors"? "Win" : "Lose"
+    else if(user.name==="Scissors") return computer.name==="Paper" ? "Win" : "Lose"
+    else if(user.name==="Paper") return computer.name==="Rock"? "Win": "Lose"
+  }
+
+  const randomChoice=()=>{
+    let itemArray = Object.keys(choice)
+    let randomItem = Math.floor(Math.random()*itemArray.length)
+    let final = itemArray[randomItem]
+    return choice[final]
   }
   return (
     <div>
       <div className="main">
-        <Box title="You" item={userSelect} />
-        <Box title="Computer" />
+        <Box title="You" item={userSelect} result={result}/>
+        <Box title="Computer" item={computerSelect} result={result} />
       </div>
 
       <div className="main">
